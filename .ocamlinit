@@ -2,7 +2,15 @@
    Just run `utop` from the root of the project. *)
 #use_output "dune ocaml top";;
 
+(* Don't feel like typing out `Ocaml_coding_exercises` each time
+   but still want the project name to stay the same *)
+open Ocaml_coding_exercises;;
+
 (* Update this for whichever code problem is currently
    being worked on to avoid needing to use the long-form
    name or needing to call `open` after each restart. *)
-open Lib.Aoc.Year2022.Day01;;
+open Aoc.Year2022.Day01;;
+
+(* Alternately this is an option:
+module Oce = Ocaml_coding_exercises;;
+open Oce.Aoc.Year2022.Day01;; *)
