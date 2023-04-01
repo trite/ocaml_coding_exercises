@@ -1,3 +1,3 @@
 let () = print_endline "Hello, World!"
 
-let () = true |> Lib.Verify.verify
+let () = true |> Lib.Utils.Verify.verify
