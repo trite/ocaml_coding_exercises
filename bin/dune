@@ -1,4 +1,6 @@
+; (include_subdirs unqualified)
+
 (executable
  (public_name ocaml_coding_exercises)
  (name main)
- (libraries ocaml_coding_exercises lib))
+ (libraries lib))

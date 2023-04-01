@@ -1,1 +1,4 @@
-# ocaml_coding_exercises
+# Setup
+
+```shell
+$ make 

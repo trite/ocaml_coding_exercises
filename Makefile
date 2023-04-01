@@ -4,9 +4,15 @@ OPAMDUNE = opam exec -- dune
 utop:
 	$(OPAMDUNE) utop .
 
+.PHONY: init
+init: # TODO: haven't tested this yet
+	opam switch create .
+	eval $(opam env)
+	install-dev-tools
+
 .PHONY: install-dev-tools
 install-dev-tools:
-	opam install -y merlin ocamlformat utop
+	opam install -y ocaml-lsp-server merlin ocamlformat utop
 
 .PHONY: build
 build:

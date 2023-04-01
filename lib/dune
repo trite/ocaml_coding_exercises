@@ -1,2 +1,4 @@
+(include_subdirs qualified)
+
 (library
- (name ocaml_coding_exercises))
+ (name lib))
