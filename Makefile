@@ -2,13 +2,12 @@ OPAMDUNE = opam exec -- dune
 
 .PHONY: utop
 utop:
-	$(OPAMDUNE) utop .
+	eval $$(opam env) && utop
 
 .PHONY: init
 init: # TODO: haven't tested this yet
 	opam switch create .
-	eval $(opam env)
-	install-dev-tools
+	eval $$(opam env) && install-dev-tools
 
 .PHONY: install-dev-tools
 install-dev-tools:
@@ -20,4 +19,4 @@ build:
 
 .PHONY: watch
 watch:
-	dune build -w
+	$(OPAMDUNE) build -w
