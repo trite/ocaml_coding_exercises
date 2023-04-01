@@ -1,1 +1,8 @@
+(* Makes dune build the project specifically for use in utop.
+   Just run `utop` from the root of the project. *)
 #use_output "dune ocaml top";;
+
+(* Update this for whichever code problem is currently
+   being worked on to avoid needing to use the long-form
+   name or needing to call `open` after each restart. *)
+open Lib.Aoc.Year2022.Day01;;

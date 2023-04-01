@@ -1,0 +1,6 @@
+profile = ocamlformat
+version = 0.25.1
+
+let-binding-spacing = sparse
+break-infix = fit-or-vertical
+wrap-comments = true
