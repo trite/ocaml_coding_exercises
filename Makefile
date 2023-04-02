@@ -5,10 +5,7 @@ utop:
 	eval $$(opam env) && utop
 
 .PHONY: init
-init: # TODO: this works overall, but the `install` line isn't tested yet
-	opam switch create . -y
-	eval $$(opam env) && install
-	eval $$(opam env) && install-dev-tools
+init: create-switch install install-dev-tools
 
 .PHONY: install
 install:
@@ -17,6 +14,10 @@ install:
 .PHONY: install-dev-tools
 install-dev-tools:
 	opam install -y ocaml-lsp-server ocamlformat utop
+
+.PHONY: create-switch
+create-switch:
+	opam switch create . -y
 
 .PHONY: build
 build:
