@@ -16,7 +16,7 @@ install:
 
 .PHONY: install-dev-tools
 install-dev-tools:
-	opam install -y ocaml-lsp-server merlin ocamlformat utop
+	opam install -y ocaml-lsp-server ocamlformat utop
 
 .PHONY: build
 build:
