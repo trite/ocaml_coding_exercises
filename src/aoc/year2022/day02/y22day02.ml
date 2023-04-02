@@ -1,5 +1,7 @@
 open Fn
 
+let day = "y22day02"
+
 let data = Fs.read_lines "src/aoc/year2022/day02/data.txt"
 
 let test = Fs.read_lines "src/aoc/year2022/day02/test.txt"
@@ -80,11 +82,11 @@ let calculate_part2 (opponent, self) =
 
 
 (* Part 1 *)
-let () = do_work calculate_part1 test = 15 |> O.verify "y22day02" O.p1test
+let () = do_work calculate_part1 test = 15 |> O.verify day O.p1test
 
-let () = do_work calculate_part1 data = 8933 |> O.verify "y22day02" O.p1data
+let () = do_work calculate_part1 data = 8933 |> O.verify day O.p1data
 
 (* Part 2 *)
-let () = do_work calculate_part2 test = 12 |> O.verify "y22day02" O.p2test
+let () = do_work calculate_part2 test = 12 |> O.verify day O.p2test
 
-let () = do_work calculate_part2 data = 11998 |> O.verify "y22day02" O.p2data
+let () = do_work calculate_part2 data = 11998 |> O.verify day O.p2data

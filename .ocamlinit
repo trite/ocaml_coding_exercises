@@ -9,7 +9,7 @@ open Ocaml_coding_exercises;;
 (* Update this for whichever code problem is currently
    being worked on to avoid needing to use the long-form
    name or needing to call `open` after each restart. *)
-open Y22day02;;
+open Y22day03;;
 
 (* Alternately this is an option:
 module Oce = Ocaml_coding_exercises;;
