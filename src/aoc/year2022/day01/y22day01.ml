@@ -15,15 +15,15 @@ let group_calories =
 (* Part 1 *)
 let most_calories = group_calories >> Lst_int.max
 
-let () = most_calories test = 24000 |> O.verify
+let () = most_calories test = 24000 |> O.verify "y22day01" O.p1test
 
-let () = most_calories data = 72017 |> O.verify
+let () = most_calories data = 72017 |> O.verify "y22day01" O.p1data
 
 (* Part 2 *)
 let sum_top_x_calories x lst =
   lst |> group_calories |> Lst_int.sort |> List.rev |> Lst.take x |> Lst_int.sum
 
 
-let () = sum_top_x_calories 3 test = 45000 |> O.verify
+let () = sum_top_x_calories 3 test = 45000 |> O.verify "y22day01" O.p2test
 
-let () = sum_top_x_calories 3 data = 212520 |> O.verify
+let () = sum_top_x_calories 3 data = 212520 |> O.verify "y22day01" O.p2data
