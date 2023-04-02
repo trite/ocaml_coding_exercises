@@ -5,9 +5,14 @@ utop:
 	eval $$(opam env) && utop
 
 .PHONY: init
-init: # TODO: haven't tested this yet
+init: # TODO: this works overall, but the `install` line isn't tested yet
 	opam switch create .
+	eval $$(opam env) && install
 	eval $$(opam env) && install-dev-tools
+
+.PHONY: install
+install:
+	opam install -y . --deps-only
 
 .PHONY: install-dev-tools
 install-dev-tools:
