@@ -1,3 +1,5 @@
+let ( >> ) = Fn.( >> )
+
 let split_on_value split_on to_split =
   let rec go acc curr split_on to_split =
     match to_split with
@@ -9,3 +11,6 @@ let split_on_value split_on to_split =
         go acc (hd :: curr) split_on tl
   in
   go [] [] split_on to_split
+
+
+let take x lst = Core.List.take lst x

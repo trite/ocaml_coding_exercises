@@ -1,3 +1,8 @@
+(* #use "topfind";;
+#require "ocamlformat";;
+let () = Ocamlformat.format := "ocamlformat --intf" *)
+
+
 (* Makes dune build the project specifically for use in utop.
    Just run `utop` from the root of the project. *)
 #use_output "dune ocaml top";;
@@ -9,8 +14,8 @@ open Ocaml_coding_exercises;;
 (* Update this for whichever code problem is currently
    being worked on to avoid needing to use the long-form
    name or needing to call `open` after each restart. *)
-open Aoc.Year2022.Day01;;
+open Y22day02;;
 
 (* Alternately this is an option:
 module Oce = Ocaml_coding_exercises;;
-open Oce.Aoc.Year2022.Day01;; *)
+open Y22day01;; *)

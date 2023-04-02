@@ -26,3 +26,11 @@ build:
 .PHONY: watch
 watch:
 	$(OPAMDUNE) build -w
+
+.PHONY: clean
+clean:
+	$(OPAMDUNE) clean
+
+.PHONY: build_verbose
+build_verbose:
+	$(OPAMDUNE) build --verbose

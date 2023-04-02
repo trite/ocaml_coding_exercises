@@ -1,5 +1,7 @@
 (lang dune 3.7)
 
+; (include_files .ocamlinit)
+
 (name ocaml_coding_exercises)
 
 (generate_opam_files true)
