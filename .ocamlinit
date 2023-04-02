@@ -1,8 +1,3 @@
-(* #use "topfind";;
-#require "ocamlformat";;
-let () = Ocamlformat.format := "ocamlformat --intf" *)
-
-
 (* Makes dune build the project specifically for use in utop.
    Just run `utop` from the root of the project. *)
 #use_output "dune ocaml top";;
