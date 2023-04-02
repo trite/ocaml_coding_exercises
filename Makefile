@@ -6,7 +6,7 @@ utop:
 
 .PHONY: init
 init: # TODO: this works overall, but the `install` line isn't tested yet
-	opam switch create .
+	opam switch create . -y
 	eval $$(opam env) && install
 	eval $$(opam env) && install-dev-tools
 
