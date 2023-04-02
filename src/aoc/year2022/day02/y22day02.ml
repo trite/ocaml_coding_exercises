@@ -35,7 +35,7 @@ let parse_string =
 
 
 let do_work calculation data =
-  data |> List.map (parse_string >> calculation) |> Lst_int.sum
+  data |> Lst.map (parse_string >> calculation) |> Lst_int.sum
 
 
 let calculate_part1 (opponent, self) =
@@ -82,11 +82,11 @@ let calculate_part2 (opponent, self) =
 
 
 (* Part 1 *)
-let () = do_work calculate_part1 test = 15 |> V.verify day V.p1test
+let () = do_work calculate_part1 test = 15 |> V.verify_p1_test day
 
-let () = do_work calculate_part1 data = 8933 |> V.verify day V.p1data
+let () = do_work calculate_part1 data = 8933 |> V.verify_p1_data day
 
 (* Part 2 *)
-let () = do_work calculate_part2 test = 12 |> V.verify day V.p2test
+let () = do_work calculate_part2 test = 12 |> V.verify_p2_test day
 
-let () = do_work calculate_part2 data = 11998 |> V.verify day V.p2data
+let () = do_work calculate_part2 data = 11998 |> V.verify_p2_data day

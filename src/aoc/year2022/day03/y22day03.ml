@@ -6,13 +6,12 @@ let data = Fs.read_lines "src/aoc/year2022/day03/data.txt"
 
 let test = Fs.read_lines "src/aoc/year2022/day03/test.txt"
 
-let string_to_list = String.to_seq >> List.of_seq
-
 let find_shared_item_p1 (a, b) =
   a
-  |> string_to_list
-  |> List.filter (fun x -> b |> string_to_list |> List.mem x)
-  |> List.hd
+  |> Str.to_char_list
+  |> Lst.filter (fun x -> b |> Str.to_char_list |> Lst.mem x)
+  |> Lst.head
+  |> Opt.get_or_failwith "find_shared_item_p1 shouldn't produce an empty list"
 
 
 let char_code_to_priority x =
@@ -25,65 +24,48 @@ let char_code_to_priority x =
       failwith "invalid character code"
 
 
-let string_split_at index str =
-  ( Core.String.slice str 0 index
-  , Core.String.slice str index (str |> Core.String.length) )
-
-
 let get_priority_p1 x =
   x
-  |> string_split_at ((x |> Core.String.length) / 2)
+  |> Str.split_at ((x |> Core.String.length) / 2)
   |> find_shared_item_p1
   |> Char.code
   |> char_code_to_priority
 
 
-let part1 = List.map get_priority_p1
+let part1 = Lst.map get_priority_p1
 
 let do_work part = part >> Lst_int.sum
-
-let remove_duplicates str =
-  let go acc curr = if List.mem curr acc then acc else curr :: acc in
-  List.fold_left go [] str |> List.rev
-
-
-let char_list_to_string = List.to_seq >> String.of_seq
 
 let find_shared_item_p2 (a, b, c) =
   let find_shared_items a b =
     a
-    |> string_to_list
-    |> List.filter (fun x -> b |> string_to_list |> List.mem x)
-    |> remove_duplicates
-    |> char_list_to_string
+    |> Str.to_char_list
+    |> Lst.filter (fun x -> b |> Str.to_char_list |> Lst.mem x)
+    |> Lst.remove_duplicates
+    |> Str.from_char_list
   in
   a |> find_shared_items b |> find_shared_items c
 
 
-let to_tuple_3 = function
-  | [a; b; c] ->
-      (a, b, c)
-  | _ ->
-      failwith "Cannot convert array to Tuple3 - invalid input"
-
-
 let chunk_to_priority =
-  to_tuple_3
+  Lst.to_tuple_3
+  >> Opt.get_or_failwith "chunk_to_priority was fed a list of invalid size"
   >> find_shared_item_p2
-  >> string_to_list
-  >> List.hd
+  >> Str.to_char_list
+  >> Lst.head
+  >> Opt.get_or_failwith "chunk_to_priority shouldn't produce an empty list"
   >> Char.code
   >> char_code_to_priority
 
 
-let part2 lst = Core.List.chunks_of lst ~length:3 |> List.map chunk_to_priority
+let part2 = Lst.chunk 3 >> Lst.map chunk_to_priority
 
 (* Part 1 *)
-let () = do_work part1 test = 157 |> V.verify day V.p1test
+let () = do_work part1 test = 157 |> V.verify_p1_test day
 
-let () = do_work part1 data = 7850 |> V.verify day V.p1data
+let () = do_work part1 data = 7850 |> V.verify_p1_data day
 
 (* Part 2 *)
-let () = do_work part2 test = 70 |> V.verify day V.p2test
+let () = do_work part2 test = 70 |> V.verify_p2_test day
 
-let () = do_work part2 data = 2581 |> V.verify day V.p2data
+let () = do_work part2 data = 2581 |> V.verify_p2_data day
