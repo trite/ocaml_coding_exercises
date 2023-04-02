@@ -82,11 +82,11 @@ let calculate_part2 (opponent, self) =
 
 
 (* Part 1 *)
-let () = do_work calculate_part1 test = 15 |> O.verify day O.p1test
+let () = do_work calculate_part1 test = 15 |> V.verify day V.p1test
 
-let () = do_work calculate_part1 data = 8933 |> O.verify day O.p1data
+let () = do_work calculate_part1 data = 8933 |> V.verify day V.p1data
 
 (* Part 2 *)
-let () = do_work calculate_part2 test = 12 |> O.verify day O.p2test
+let () = do_work calculate_part2 test = 12 |> V.verify day V.p2test
 
-let () = do_work calculate_part2 data = 11998 |> O.verify day O.p2data
+let () = do_work calculate_part2 data = 11998 |> V.verify day V.p2data

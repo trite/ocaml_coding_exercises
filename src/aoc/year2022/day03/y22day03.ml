@@ -79,11 +79,11 @@ let chunk_to_priority =
 let part2 lst = Core.List.chunks_of lst ~length:3 |> List.map chunk_to_priority
 
 (* Part 1 *)
-let () = do_work part1 test = 157 |> O.verify day O.p1test
+let () = do_work part1 test = 157 |> V.verify day V.p1test
 
-let () = do_work part1 data = 7850 |> O.verify day O.p1test
+let () = do_work part1 data = 7850 |> V.verify day V.p1data
 
 (* Part 2 *)
-let () = do_work part2 test = 70 |> O.verify day O.p1test
+let () = do_work part2 test = 70 |> V.verify day V.p2test
 
-let () = do_work part2 data = 2581 |> O.verify day O.p1test
+let () = do_work part2 data = 2581 |> V.verify day V.p2data
